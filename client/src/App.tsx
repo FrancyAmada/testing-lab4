@@ -397,6 +397,7 @@ const App = () => {
             onChange={(e) => setNewTaskTitle(e.target.value)}
             className="p-2 border border-gray-300 rounded"
             disabled={loading}
+            data-testid="new-task-title-input"
           />
 
           <div className="flex flex-wrap gap-4">
@@ -411,10 +412,20 @@ const App = () => {
                 }
                 className="p-2 border border-gray-300 rounded bg-white"
                 disabled={loading}
+                data-testid="new-task-type-input"
               >
-                <option value="basic">Basic</option>
-                <option value="timed">Timed</option>
-                <option value="checklist">Checklist</option>
+                <option value="basic" data-testid="new-task-type-input-basic">
+                  Basic
+                </option>
+                <option value="timed" data-testid="new-task-type-input-timed">
+                  Timed
+                </option>
+                <option
+                  value="checklist"
+                  data-testid="new-task-type-input-checklist"
+                >
+                  Checklist
+                </option>
               </select>
             </div>
 
@@ -428,6 +439,7 @@ const App = () => {
                   onChange={(e) => setHoursInput(parseInt(e.target.value) || 0)}
                   className="w-16 p-2 border border-gray-300 rounded mr-1"
                   disabled={loading}
+                  data-testid="new-task-timed-hour-input"
                 />
                 <span className="mr-2">h</span>
                 <input
@@ -445,6 +457,7 @@ const App = () => {
                     )
                   }
                   className="w-16 p-2 border border-gray-300 rounded mr-1"
+                  data-testid="new-task-timed-minutes-input"
                   disabled={loading}
                 />
                 <span>m</span>
@@ -461,6 +474,7 @@ const App = () => {
                   value={dueDateInput}
                   onChange={(e) => setDueDateInput(e.target.value)}
                   disabled={loading}
+                  data-testid="new-task-due-date-input"
                 />
               </div>
             )}
@@ -470,6 +484,7 @@ const App = () => {
             onClick={handleAddTask}
             className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 w-full sm:w-auto disabled:bg-blue-300"
             disabled={loading || !newTaskTitle.trim()}
+            data-testid="new-task-add-button"
           >
             {TaskManager.isAddTaskLoading() ? (
               <div className="flex items-center justify-center">

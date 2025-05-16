@@ -59,6 +59,7 @@ const BasicTask = ({
       className={`relative p-4 rounded-lg border ${
         isDone ? "bg-gray-50 border-gray-200" : "bg-white border-gray-200"
       } shadow-sm mb-4`}
+      data-testid="basic-task"
     >
       {dueDate ? <TaskReminderIcon dueDate={dueDate!} /> : null}
       <div
@@ -81,6 +82,7 @@ const BasicTask = ({
               onChange={(e) => setEditValue(e.target.value)}
               className="flex-1 p-1 border border-gray-300 rounded text-black w-full"
               autoFocus
+              data-testid="basic-task-editinput"
             />
           ) : (
             <span
@@ -98,6 +100,7 @@ const BasicTask = ({
             <button
               onClick={handleSave}
               className="text-blue-500 hover:text-blue-700"
+              data-testid="basic-task-savebutton"
             >
               <Save size={18} />
             </button>
@@ -105,6 +108,7 @@ const BasicTask = ({
             <button
               onClick={handleEdit}
               className="text-gray-500 hover:text-gray-700"
+              data-testid="basic-task-editbutton"
             >
               <Edit2 size={18} />
             </button>
@@ -112,6 +116,7 @@ const BasicTask = ({
           <button
             className="text-red-500 hover:text-red-700"
             onClick={() => onHandleDelete(id)}
+            data-testid="basic-task-deletebutton"
           >
             <Trash size={18} />
           </button>
