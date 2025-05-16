@@ -13,16 +13,28 @@ This guide provides instructions to set up both the **backend** and **frontend**
 
 ## 🚀 Root Setup (Running Both Backend & Frontend Together)
 
-Navigate to the root folder of the project and install dependencies for both backend and frontend:
+Install the initial packages in the root:
 
 ```sh
 npm install
+```
+
+Navigate to the root folder of the project and install dependencies for both backend and frontend:
+
+```sh
+npm install-all
 ```
 
 Run both the backend and frontend in parallel:
 
 ```sh
 npm run start
+```
+
+Add a .env file in the client folder and add this
+
+```sh
+VITE_SERVER_URL=http://localhost:3000
 ```
 
 ---
