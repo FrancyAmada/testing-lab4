@@ -129,6 +129,7 @@ const ChecklistTask = ({
               onChange={(e) => setEditValue(e.target.value)}
               className="flex-1 p-1 border border-gray-300 rounded text-black"
               autoFocus
+              data-testid="checklist-task-editinput"
             />
           ) : (
             <span
@@ -146,6 +147,7 @@ const ChecklistTask = ({
             <button
               onClick={handleSave}
               className="text-blue-500 hover:text-blue-700"
+              data-testid="checklist-task-savebutton"
             >
               <Save size={18} />
             </button>
@@ -153,6 +155,7 @@ const ChecklistTask = ({
             <button
               onClick={handleEdit}
               className="text-gray-500 hover:text-gray-700"
+              data-testid="checklist-task-editbutton"
             >
               <Edit2 size={18} />
             </button>
@@ -160,6 +163,7 @@ const ChecklistTask = ({
           <button
             className="text-red-500 hover:text-red-700"
             onClick={() => onHandleDelete(id)}
+            data-testid="checklist-task-deletebutton"
           >
             <Trash size={18} />
           </button>

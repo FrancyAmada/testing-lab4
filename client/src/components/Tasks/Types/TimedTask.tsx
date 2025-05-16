@@ -74,6 +74,7 @@ const TimedTask = ({
       className={`relative p-4 rounded-lg border ${
         isDone ? "bg-gray-50 border-gray-200" : "bg-white border-gray-200"
       } shadow-sm mb-4`}
+      data-testid="timed-task"
     >
       {dueDate ? <TaskReminderIcon dueDate={dueDate} /> : null}
       <div className="flex items-center justify-between mb-2 pt-3">
@@ -94,6 +95,7 @@ const TimedTask = ({
               onChange={(e) => setEditValue(e.target.value)}
               className="flex-1 p-1 border border-gray-300 rounded text-black"
               autoFocus
+              data-testid="timed-task-editinput"
             />
           ) : (
             <span
@@ -111,6 +113,7 @@ const TimedTask = ({
             <button
               onClick={handleSave}
               className="text-blue-500 hover:text-blue-700"
+              data-testid="timed-task-savebutton"
             >
               <Save size={18} />
             </button>
@@ -118,6 +121,7 @@ const TimedTask = ({
             <button
               onClick={handleEdit}
               className="text-gray-500 hover:text-gray-700"
+              data-testid="timed-task-editbutton"
             >
               <Edit2 size={18} />
             </button>
@@ -125,6 +129,7 @@ const TimedTask = ({
           <button
             className="text-red-500 hover:text-red-700"
             onClick={() => onHandleDelete(id)}
+            data-testid="timed-task-deletebutton"
           >
             <Trash size={18} />
           </button>
@@ -143,6 +148,7 @@ const TimedTask = ({
               defaultValue={0}
               onChange={(e) => setHoursInput(parseInt(e.target.value) || 0)}
               className="w-16 px-2 py-1 border border-gray-300 rounded mr-1"
+              data-testid="timed-task-edit-hourinput"
             />
             <span className="mr-2">h</span>
             <input
@@ -160,6 +166,7 @@ const TimedTask = ({
                 )
               }
               className="w-16 px-2 py-1 border border-gray-300 rounded mr-1"
+              data-testid="timed-task-edit-minuteinput"
             />
             <span className="mr-2">m</span>
           </div>
