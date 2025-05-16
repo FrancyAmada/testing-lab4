@@ -62,4 +62,18 @@ describe("Task Creation Tests", () => {
     cy.contains(taskTitle).should("exist");
     cy.contains("Task added successfully!").should("be.visible");
   });
+
+  it("should create new tasks for the checklist task", () => {
+    const checklistItems = ["Milk", "Eggs", "Bread"];
+
+    checklistItems.forEach((item) => {
+      cy.get('[data-testid="checklist-task-new-item-input"]').type(`${item}`);
+      cy.wait(300);
+
+      cy.get('[data-testid="checklist-task-new-item-button"]').click();
+      cy.wait(500);
+
+      cy.contains(item).should("exist");
+    });
+  });
 });

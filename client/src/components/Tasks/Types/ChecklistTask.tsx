@@ -106,6 +106,7 @@ const ChecklistTask = ({
       className={`relative p-4 rounded-lg border ${
         isDone ? "bg-gray-50 border-gray-200" : "bg-white border-gray-200"
       } shadow-sm mb-4`}
+      data-testid="checklist-task"
     >
       {dueDate ? <TaskReminderIcon dueDate={dueDate!} /> : null}
       <div
@@ -262,10 +263,12 @@ const ChecklistTask = ({
           onChange={(e) => setNewItemText(e.target.value)}
           className="flex-1 p-1 text-sm border border-gray-300 rounded mr-2 text-black"
           onKeyPress={(e) => e.key === "Enter" && handleAddChecklistItem()}
+          data-testid="checklist-task-new-item-input"
         />
         <button
           onClick={handleAddChecklistItem}
           className="p-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+          data-testid="checklist-task-new-item-button"
         >
           <Plus size={16} />
         </button>
