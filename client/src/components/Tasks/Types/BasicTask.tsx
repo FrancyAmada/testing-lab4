@@ -68,6 +68,7 @@ const BasicTask = ({
         <div className="flex items-center gap-3">
           <button
             onClick={setCompleted}
+            data-testid="basic-task-checkbox"
             className={`w-6 h-6 rounded-full flex items-center justify-center ${
               isDone ? "bg-green-500 text-white" : "border border-gray-300"
             }`}
