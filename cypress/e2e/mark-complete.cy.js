@@ -108,4 +108,8 @@ describe("The mark complete feature", () => {
       .should("have.css", "text-decoration")
       .and("include", "line-through");
   });
+
+  after(() => {
+    cy.request("DELETE", "http://localhost:3000/api/tasks");
+  });
 });

@@ -40,4 +40,8 @@ describe("The delete feature", () => {
 
     cy.contains(taskTitle).should("not.exist");
   });
+
+  after(() => {
+    cy.request("DELETE", "http://localhost:3000/api/tasks");
+  });
 });
