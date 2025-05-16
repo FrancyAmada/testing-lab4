@@ -7,10 +7,13 @@ describe("Task Creation Tests", () => {
     const taskTitle = "Buy groceries";
 
     cy.get('[data-testid="new-task-title-input"]').type(taskTitle);
+    cy.wait(300);
 
     cy.get('[data-testid="new-task-type-input"]').select("basic");
+    cy.wait(300);
 
     cy.get('[data-testid="new-task-add-button"]').click();
+    cy.wait(300);
 
     cy.contains(taskTitle, { timeout: 5000 }).should("be.visible");
 
@@ -18,7 +21,9 @@ describe("Task Creation Tests", () => {
   });
 
   it("should create a timed task", () => {
-    cy.get('[data-testid="new-task-title-input"]').type("My Timed Task");
+    const taskTitle = "Work on my Project";
+
+    cy.get('[data-testid="new-task-title-input"]').type(taskTitle);
     cy.wait(300);
 
     cy.get('[data-testid="new-task-type-input"]').select("timed");
@@ -28,16 +33,19 @@ describe("Task Creation Tests", () => {
     cy.wait(300);
 
     cy.get('[data-testid="new-task-timed-minutes-input"]').clear().type("30");
-    cy.wait(300);
+    cy.wait(800);
 
     cy.get('[data-testid="new-task-add-button"]').click();
     cy.wait(1000);
 
-    cy.contains("My Timed Task").should("exist");
+    cy.contains(taskTitle, { timeout: 5000 }).should("be.visible");
+    cy.contains("Task added successfully!").should("be.visible");
   });
 
   it("should create a checklist task", () => {
-    cy.get('[data-testid="new-task-title-input"]').type("My Checklist Task");
+    const taskTitle = "Grocery List";
+
+    cy.get('[data-testid="new-task-title-input"]').type(taskTitle);
     cy.wait(300);
 
     cy.get('[data-testid="new-task-type-input"]').select("checklist");
@@ -46,11 +54,12 @@ describe("Task Creation Tests", () => {
     cy.get('[data-testid="new-task-due-date-input"]').type(
       new Date(Date.now() + 86400000).toISOString().slice(0, 16)
     );
-    cy.wait(300);
+    cy.wait(1000);
 
     cy.get('[data-testid="new-task-add-button"]').click();
     cy.wait(1000);
 
-    cy.contains("My Checklist Task").should("exist");
+    cy.contains(taskTitle).should("exist");
+    cy.contains("Task added successfully!").should("be.visible");
   });
 });
