@@ -76,4 +76,8 @@ describe("Task Creation Tests", () => {
       cy.contains(item).should("exist");
     });
   });
+
+  after(() => {
+    cy.request("DELETE", "http://localhost:3000/api/tasks");
+  });
 });

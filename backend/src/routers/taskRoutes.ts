@@ -385,3 +385,8 @@ router.delete("/:id", (req: any, res: any) => {
 });
 
 export default router;
+
+router.delete("/", (req: any, res: any) => {
+  tasks = [];
+  res.status(200).json({ message: "Tasks deleted successfully" });
+});

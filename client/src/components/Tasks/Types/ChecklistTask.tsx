@@ -216,6 +216,7 @@ const ChecklistTask = ({
                   }}
                   onBlur={() => saveEditingItem(item.id)}
                   className="text-sm p-1 border border-gray-300 rounded text-black"
+                  data-testid="checklist-task-item-editinput"
                   autoFocus
                 />
               ) : (
@@ -236,6 +237,7 @@ const ChecklistTask = ({
                 <button
                   onClick={() => saveEditingItem(item.id)}
                   className="text-blue-500 hover:text-blue-700"
+                  data-testid="checklist-task-item-savebutton"
                 >
                   <Save size={18} />
                 </button>
@@ -243,6 +245,7 @@ const ChecklistTask = ({
                 <button
                   onClick={() => startEditingItem(item.id, item.text)}
                   className="text-gray-500 hover:text-gray-700"
+                  data-testid="checklist-task-item-editbutton"
                 >
                   <Edit2 size={14} />
                 </button>
@@ -250,6 +253,7 @@ const ChecklistTask = ({
               <button
                 onClick={() => handleRemoveChecklistItem(item.id)}
                 className="text-gray-400 hover:text-red-500"
+                data-testid="checklist-task-item-deletebutton"
               >
                 <Trash size={14} />
               </button>
