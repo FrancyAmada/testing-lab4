@@ -1,4 +1,4 @@
-# Component Design Project Setup
+# Software Testing Laboratory 4
 
 This guide provides instructions to set up both the **backend** and **frontend** for this project.
 
@@ -16,7 +16,6 @@ This guide provides instructions to set up both the **backend** and **frontend**
 Navigate to the root folder of the project and install dependencies for both backend and frontend:
 
 ```sh
-cd /path/to/your/project
 npm install
 ```
 
@@ -34,41 +33,31 @@ If you want to run them separately after installing on the root, follow these st
 
 ### **Backend**
 
-#### **1️⃣ Navigate to the Backend Folder**
+#### ** Navigate to the Backend Folder**
 
 ```sh
-cd /path/to/your/project/backend
+cd backend
 ```
 
-#### **2️⃣ Environment Configuration**
-
-Create a `.env` file in the `backend` directory and configure your environment variables as needed.
-
-#### **3️⃣ Running the Backend**
+#### ** Running the Backend**
 
 **Development Mode:**
 
 ```sh
 npm run dev
-```
-
-**Production Mode:**
-
-```sh
-npm start
 ```
 
 ---
 
 ### **Frontend**
 
-#### **1️⃣ Navigate to the Frontend Folder**
+#### ** Navigate to the Frontend Folder**
 
 ```sh
-cd /path/to/your/project/client
+cd client
 ```
 
-#### **2️⃣ Running the Frontend**
+#### ** Running the Frontend**
 
 **Development Mode:**
 
@@ -76,25 +65,18 @@ cd /path/to/your/project/client
 npm run dev
 ```
 
-**Build for Production:**
+## Run Cypress Test concurrently with the frontend and backend
+
+## Run this command from the project's root
 
 ```sh
-npm run build
+npm run test:cypress
 ```
-
-**Preview Production Build:**
-
-```sh
-npm run preview
-```
-
----
 
 ## 🎯 Summary of Commands
 
 ```sh
 # Install dependencies for both backend and frontend from root
-cd /path/to/your/project
 npm install
 npm run start  # Runs both backend and frontend
 
@@ -106,10 +88,8 @@ cd backend
 npm run dev  # or npm start for production
 
 # Navigate to frontend and run separately
-cd ../client
+cd client
 npm run dev  # or npm run build for production
 ```
 
 ---
-
-Now both the **backend** and **frontend** are ready! 🚀 Happy coding! 😊
